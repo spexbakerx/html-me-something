@@ -3,63 +3,145 @@
 
 <head>
 <title> My Webpage </title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Work+Sans:400,700,800,900" rel="stylesheet">
+
+<script type="text/javascript" src="instafeed.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
 </head>
 
 <body>
 
+  <div class = "container">
+
+
+
   <div class = "header">
     <header>
-      <h1 class = "logo"> .LB Update </h1>
+
       <ul class = "nav">
-        <li><a href = ""> News </a></li>
-        <li><a href = ""> Design </a></li>
-        <li><a href = ""> Photo </a></li>
-        <li><a href = ""> Etc. </a></li>
+        <li class="logo"> .LB Updates</li>
+        <li><a href = "#News"> News </a></li>
+        <li><a href = "#Design"> Design </a></li>
+        <li><a href = "#Photo"> Photo </a></li>
+        <li><a href = "#Etc"> Etc. </a></li>
+        <li class = "face"> &#9786; </li>
+        <li class ="status">  <a href="mailto:spexbakerx@gmail.com">Current Status: Accepting Work</a> </li>
       </ul>
     </header>
   </div>
 
-  <div class = "status">
-    <p> Current Status: </p>
-    <p> Accepting work </p>
-    <p class = "face"> &#9786; </p>
-  </div>
+
+
+
+
+
 
   <main>
 
-    <h1> News </h1>
-
     <article>
-      <p> April 17, 2017 </p>
-      <h2>Learning to code </h2>
-      <p>Started taking a full stack developing class via <a href= "https://www.launchcode.org/lc101"> Launchcode 101 </a> </p>
+    <h1 id="News"> News </h1>
+        <p class = "meta"> April 17, 2017 </p>
+        <h2>Ya gurl is learning how to code! </h2>
+        <p>I started taking a full stack developing class via <a href= "https://www.launchcode.org/lc101"> Launchcode 101. </a> </p>
     </article>
 
-    <h1> Design </h1>
+
 
     <article>
-      <p> April 17, 2017 </p>
+      <h1 id="Design"> Design </h1>
+      <p class = "meta"> March 28, 2017 </p>
       <h2> Nike Custom Tee Designs </h2>
       <p> Designed some shirts for Nike's House of Hoops store in Harlem. Buyers can customize the designs themselves.</p>
-      <img sr = "">
+      <div class="img-container">
+          <img src = "images/LB-concert-R3-3-SHIRT.jpg" class ="image">
+          <div class="overlay">
+          </div>
+      </div>
+      <div class="img-container">
+          <img src = "images/LB-concert-R3-3-SHIRT-closeup.jpg" class ="image">
+          <div class="overlay">
+          </div>
+      </div>
+      <div class="img-container">
+          <img src = "images/LB-concert-R3-4-SHIRT.jpg" class ="image">
+          <div class="overlay">
+          </div>
+      </div>
+      <div class="img-container">
+          <img src = "images/LB-concert-R3-4-SHIRT-closup.jpg" class ="image">
+          <div class="overlay">
+          </div>
+      </div>
+
     </article>
 
-    <h1> Photos </h1>
+
 
     <article>
-      <p> April 13, 2017 </p>
+      <h1 id="Photo"> Photo </h1>
+      <p class = "meta"> April 13, 2017 </p>
       <h2> Hawaii Trip </h2>
       <p> Took a trip to Hawaii for my brother's wedding </p>
-      <img sr = "">
+      <div class="img-container">
+          <img src = "images/hawaii-web-1.jpg" class ="image">
+          <div class="overlay">
+          </div>
+      </div>
+
+
     </article>
 
-    <h1> Etc </h1>
+
 
     <article>
+      <h1 id="Etc"> Etc </h1>
       <h2> From the 'gram </h2>
-      <img sr = "">
-      <img sr = "">
-      <img sr = "">
+
+    <div id="instafeed" style = "width: 100%; margin-right: -20px;">
+
+
+    <script type="text/javascript">
+   var userFeed = new Instafeed({
+       get: 'user',
+       userId: '12054298',
+       accessToken: '12054298.1677ed0.13409fd5697743c19e0146bebee1d0ed',
+       limit: '4',
+        resolution: 'standard_resolution',
+        template: '<a href="https://www.instagram.com/spexbakerx/" class = "insta"/><img src="{{image}}"style="margin: 0px 2% 100px 0; width: 23%; height: 23%;"></a>'
+    });
+   userFeed.run();
+</script>
+</div>
     </article>
 
   </main>
@@ -69,6 +151,8 @@
       <p> All Contents © Lauren Baker </p>
     </footer>
   </div>
+
+</div>
 
 </body>
 
